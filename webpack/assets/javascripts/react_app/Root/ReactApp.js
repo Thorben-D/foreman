@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'connected-react-router';
 import { ApolloProvider } from '@apollo/client';
 import history from '../history';
-import { getForemanContext } from '../Root/Context/ForemanContext';
+import { getForemanContext } from './Context/ForemanContext';
 import Layout, { propTypes as LayoutPropTypes } from '../components/Layout';
 import AppSwitcher from '../routes';
 
@@ -13,6 +13,7 @@ import ErrorBoundary from '../components/common/ErrorBoundary';
 import ConfirmModal from '../components/ConfirmModal';
 
 const ReactApp = ({ layout, metadata, toasts }) => {
+  metadata.permissions = new Set(metadata.permissions);
   const [context, setContext] = useState({ metadata });
   const contextData = { context, setContext };
   const ForemanContext = getForemanContext(contextData);

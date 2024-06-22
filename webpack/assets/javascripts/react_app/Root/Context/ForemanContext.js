@@ -17,6 +17,7 @@ export const useForemanOrganization = () => useForemanMetadata().organization;
 export const useForemanLocation = () => useForemanMetadata().location;
 export const useForemanUser = () => useForemanMetadata().user;
 
+export const useForemanPermissions = () => useForemanMetadata().permissions;
 export const getHostsPageUrl = displayNewHostsPage =>
   displayNewHostsPage ? '/new/hosts' : '/hosts';
 
